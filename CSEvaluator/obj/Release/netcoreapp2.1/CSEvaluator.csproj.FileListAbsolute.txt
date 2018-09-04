@@ -1,0 +1,14 @@
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/bin/Release/netcoreapp2.1/CSEvaluator.deps.json
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/bin/Release/netcoreapp2.1/CSEvaluator.runtimeconfig.json
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/bin/Release/netcoreapp2.1/CSEvaluator.runtimeconfig.dev.json
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/bin/Release/netcoreapp2.1/CSEvaluator.dll
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/bin/Release/netcoreapp2.1/CSEvaluator.pdb
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/obj/Release/netcoreapp2.1/CSEvaluator.csprojAssemblyReference.cache
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/obj/Release/netcoreapp2.1/CSEvaluator.csproj.CoreCompileInputs.cache
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/obj/Release/netcoreapp2.1/CSEvaluator.RazorAssemblyInfo.cache
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/obj/Release/netcoreapp2.1/CSEvaluator.RazorAssemblyInfo.cs
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/obj/Release/netcoreapp2.1/CSEvaluator.AssemblyInfoInputs.cache
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/obj/Release/netcoreapp2.1/CSEvaluator.AssemblyInfo.cs
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/obj/Release/netcoreapp2.1/CSEvaluator.RazorTargetAssemblyInfo.cache
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/obj/Release/netcoreapp2.1/CSEvaluator.dll
+/Users/kunalwagle/Documents/CS/CSEvaluator/CSEvaluator/obj/Release/netcoreapp2.1/CSEvaluator.pdb
