@@ -31,32 +31,39 @@ namespace CSEvaluator.Controllers
 
         private static List<Test> GenerateTests()
         {
-            TestService testEngine = new TestService();
-            int randomStringLength = testEngine.utils.RandomInt(6, 20);
-            String optionalArgs = (testEngine.utils.RandomInt(0, randomStringLength / 2)).ToString();
-            String inputString = testEngine.utils.RandomString(randomStringLength);
-            char randomChar = testEngine.utils.RandomChar();
-            String sorterString = testEngine.utils.getSorterString();
-
-            return new List<Test>
+            try
             {
-                new Test("shuffle should throw error if action is not an integer", Category.BASIC, "",
-                    "number", "", "invalid action type", true,
-                    "invalid action type"),
-                new Test("shuffle should throw error is action is outside 1 and 4", Category.BASIC, "",
-                    "5", "", "action is out of range", true,
-                    "action is out of range"),
-                new Test("when action is 1 move number of chars specified in optionalArgs" +
-                    " from the end of inputString to beginning", Category.MEDIUM, inputString, "1", "3",
-                    testEngine.MoveToBeginning(inputString, optionalArgs), false, ""),
-                new Test("when action is 2 reverse a string", Category.MEDIUM, inputString, "2", "",
-                    testEngine.ReverseString(inputString), false, ""),
-                new Test("when action is 3 return char with max occurences", Category.MEDIUM, inputString,
-                    "3", "", testEngine.GetMaxOccurrence(testEngine.groupBy(inputString.ToList())).ToString(), false, ""),
-                new Test("when action is 4 sort the string as per sorting order in the third parameter",
-                         Category.DIFFICULT, inputString.ToLower(),"4", sorterString,
-                    testEngine.SortString(sorterString, inputString), false, "")
-            };
+                TestService testEngine = new TestService();
+                int randomStringLength = testEngine.utils.RandomInt(6, 20);
+                String optionalArgs = (testEngine.utils.RandomInt(0, randomStringLength / 2)).ToString();
+                String inputString = testEngine.utils.RandomString(randomStringLength);
+                char randomChar = testEngine.utils.RandomChar();
+                String sorterString = testEngine.utils.getSorterString();
+
+                return new List<Test>
+                {
+                    new Test("shuffle should throw error if action is not an integer", Category.BASIC, "",
+                        "number", "", "invalid action type", true,
+                        "invalid action type"),
+                    new Test("shuffle should throw error is action is outside 1 and 4", Category.BASIC, "",
+                        "5", "", "action is out of range", true,
+                        "action is out of range"),
+                    new Test("when action is 1 move number of chars specified in optionalArgs" +
+                        " from the end of inputString to beginning", Category.MEDIUM, inputString, "1", "3",
+                        testEngine.MoveToBeginning(inputString, optionalArgs), false, ""),
+                    new Test("when action is 2 reverse a string", Category.MEDIUM, inputString, "2", "",
+                        testEngine.ReverseString(inputString), false, ""),
+                    new Test("when action is 3 return char with max occurences", Category.MEDIUM, inputString,
+                        "3", "", testEngine.GetMaxOccurrence(testEngine.groupBy(inputString.ToList())).ToString(), false, ""),
+                    new Test("when action is 4 sort the string as per sorting order in the third parameter",
+                             Category.DIFFICULT, inputString.ToLower(),"4", sorterString,
+                        testEngine.SortString(sorterString, inputString), false, "")
+                };
+            }
+            catch (Exception)
+            {
+                return GenerateTests();
+            }
         }
 
         public TestResult TestResult(string input)
@@ -137,7 +144,8 @@ namespace CSEvaluator.Controllers
                         "Got an exception. Message: " + e.InnerException.Message);
                 }
             }
-            catch (MissingMethodException e) {
+            catch (MissingMethodException e)
+            {
                 completedTest =
                     new CompletedTest(test, false, "Got an exception. Message: " + e.Message + " Shuffle expects parameters string, string, string and has return type string.");
             }
