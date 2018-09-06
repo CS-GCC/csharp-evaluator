@@ -2,31 +2,31 @@
 {
     public class Test
     {
-        public string Title { get; }
-        public Category Category { get; }
-        public string FirstInput { get; }
-        public string SecondInput { get; }
-        public string ThirdInput { get; }
-        public string Expect { get; }
-        public bool ExceptionExpected { get; }
-        public string ExceptionText { get; }
+        public string title { get; }
+        public Category category { get; }
+        public string firstInput { get; }
+        public string secondInput { get; }
+        public string thirdInput { get; }
+        public string expect { get; }
+        public bool exceptionExpected { get; }
+        public string exceptionText { get; }
 
         public Test(string title, Category category, string firstInput, string secondInput, string thirdInput, string expect,
             bool exceptionExpected, string exceptionText)
         {
-            Title = title;
-            Category = category;
-            FirstInput = firstInput;
-            SecondInput = secondInput;
-            ThirdInput = thirdInput;
-            Expect = expect;
-            ExceptionExpected = exceptionExpected;
-            ExceptionText = exceptionText;
+            this.title = title;
+            this.category = category;
+            this.firstInput = firstInput;
+            this.secondInput = secondInput;
+            this.thirdInput = thirdInput;
+            this.expect = expect;
+            this.exceptionExpected = exceptionExpected;
+            this.exceptionText = exceptionText;
         }
 
         public object[] GetInput()
         {
-            return new object[] { FirstInput, SecondInput, ThirdInput };
+            return new object[] { firstInput, secondInput, thirdInput };
         }
     }
 }

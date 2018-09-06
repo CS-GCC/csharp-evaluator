@@ -4,8 +4,8 @@ namespace CSEvaluator.Controllers
 {
     public class CompletedTest : Test
     {
-        public CompletedTest(Test test, bool passed, string errorMessage) : base(test.Title, test.Category,
-            test.FirstInput, test.SecondInput, test.ThirdInput, test.Expect, test.ExceptionExpected, test.ExceptionText)
+        public CompletedTest(Test test, bool passed, string errorMessage) : base(test.title, test.category,
+            test.firstInput, test.secondInput, test.thirdInput, test.expect, test.exceptionExpected, test.exceptionText)
         {
             this.passed = passed;
             message = errorMessage;

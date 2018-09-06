@@ -18,11 +18,11 @@ namespace CSEvaluator.Controllers
 
         private static Dictionary<string, List<CompletedTest>> CreateDictionary(List<CompletedTest> completedTests)
         {
-            var categories = completedTests.Select(test => test.Category).Distinct();
+            var categories = completedTests.Select(test => test.category).Distinct();
             var dictionary = new Dictionary<string, List<CompletedTest>>();
             foreach (var category in categories)
             {
-                var tests = completedTests.FindAll(test => test.Category.Equals(category));
+                var tests = completedTests.FindAll(test => test.category.Equals(category));
                 dictionary.Add(category.ToString(), tests);
             }
 

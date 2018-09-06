@@ -122,20 +122,25 @@ namespace CSEvaluator.Controllers
                     null,
                     obj,
                     test.GetInput());
-                completedTest = result.SequenceEqual(test.Expect)
+                completedTest = result.SequenceEqual(test.expect)
                     ? new CompletedTest(test, true, "Test passed")
                     : new CompletedTest(test, false,
-                        "Expected " + test.Expect + ", Got " +
+                        "Expected " + test.expect + ", Got " +
                           result);
+                if (test.exceptionExpected)
+                {
+                    completedTest = new CompletedTest(test, false,
+                                                      "Expected exception with message: " + test.exceptionText + ", but no exception was thrown");
+                }
             }
             catch (TargetInvocationException e)
             {
-                if (test.ExceptionExpected)
+                if (test.exceptionExpected)
                 {
-                    completedTest = test.ExceptionText.Equals(e.InnerException.Message)
+                    completedTest = test.exceptionText.Equals(e.InnerException.Message)
                         ? new CompletedTest(test, true, "Test Passed")
                         : new CompletedTest(test, false,
-                            "Expected exception with message: " + test.ExceptionText + ", but got message: " +
+                            "Expected exception with message: " + test.exceptionText + ", but got message: " +
                             e.InnerException.Message);
                 }
                 else
@@ -147,7 +152,7 @@ namespace CSEvaluator.Controllers
             catch (MissingMethodException e)
             {
                 completedTest =
-                    new CompletedTest(test, false, "Got an exception. Message: " + e.Message + " Shuffle expects parameters string, string, string and has return type string.");
+                    new CompletedTest(test, false, "Got an exception. Message: " + e.Message + " Shuffle expects parameters inputString (string), action (string), optionalArgs (string) and has return type string.");
             }
             catch (Exception e)
             {
