@@ -41,8 +41,8 @@ namespace CSEvaluator.Controllers
         }
 
         public string MoveToBeginning(string str, string argv) {
-                string tmp = str.Substring(str.Length - int.Parse(argv), int.Parse(argv) - 1);
-                str = str.Substring(0, str.Length - int.Parse(argv) - 1);
+                string tmp = str.Substring(str.Length - int.Parse(argv), int.Parse(argv));
+                str = str.Substring(0, str.Length - int.Parse(argv));
                 return String.Concat(tmp, str);
         }
 

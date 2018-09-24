@@ -125,8 +125,7 @@ namespace CSEvaluator.Controllers
                 completedTest = result.SequenceEqual(test.expect)
                     ? new CompletedTest(test, true, "Test passed")
                     : new CompletedTest(test, false,
-                        "Expected " + test.expect + ", Got " +
-                          result);
+				                        "Inputs: " + test.firstInput + ", " + test.secondInput + ", " + test.thirdInput + "\n" + "Expected Output: " + test.expect + ", Got " + result);
                 if (test.exceptionExpected)
                 {
                     completedTest = new CompletedTest(test, false,
