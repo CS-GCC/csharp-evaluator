@@ -54,10 +54,7 @@ namespace CSEvaluator.Controllers
                     new Test("when action is 2 reverse a string", Category.MEDIUM, inputString, "2", "",
                         testEngine.ReverseString(inputString), false, ""),
                     new Test("when action is 3 return char with max occurences", Category.MEDIUM, inputString,
-                        "3", "", testEngine.GetMaxOccurrence(testEngine.groupBy(inputString.ToList())).ToString(), false, ""),
-                    new Test("when action is 4 sort the string as per sorting order in the third parameter",
-                             Category.DIFFICULT, inputString.ToLower(),"4", sorterString,
-                        testEngine.SortString(sorterString, inputString), false, "")
+                        "3", "", testEngine.GetMaxOccurrence(testEngine.groupBy(inputString.ToList())).ToString(), false, "")
                 };
             }
             catch (Exception)
